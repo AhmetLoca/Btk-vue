@@ -8,16 +8,16 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-   <div id="firstApp">Hi {{message}}</div>
+   <div id="firstApp">Hi {{ message}}</div>
    <script>
-    const {createApp} = Vue
-    createApp({
-        data(){
-            return{
-                message:'Vue'
+        const { createApp } = Vue
+        createApp({
+            data(){
+                return{
+                    message:'vue'
+                }
             }
-        }
-    }).mount('#firstApp')
+        }).mount('#firstApp')
    </script>
 </body>
 </html>
