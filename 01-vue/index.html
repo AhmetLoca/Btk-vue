@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJs Introduction</title>
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-   <div id="firstApp">Hi {{ message}}</div>
-   <script>
+
+    <div id="firstApp">Hi {{ message }}</div>
+    
+    <script>
         const { createApp } = Vue
         createApp({
             data(){
                 return{
-                    message:'vue'
+                    message:"Vue"
                 }
             }
         }).mount('#firstApp')
-   </script>
+    </script>
+   
+    
 </body>
 </html>
