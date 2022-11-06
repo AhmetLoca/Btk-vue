@@ -9,15 +9,24 @@
   <hr />
   <Button @clean="cleanInput" />
   <input type="text" ref="inputText" />
+  <hr />
+  <Title :titleText="text2" />
+  <Title :text="text" />
+  <hr />
+  <Form />
 </template>
 
 <script>
 import Button from "./components/ButtonView.vue";
+import Title from "./components/TitleView.vue";
+import Form from "./components/FormView.vue";
 
 export default {
   name: "App",
   components: {
     Button,
+    Title,
+    Form,
   },
   data() {
     return {
@@ -25,6 +34,8 @@ export default {
       name: "ahmet",
       password: "1234",
       isLogin: false,
+      text2: "Vue3 ile",
+      text: "Vue2",
     };
   },
   methods: {
