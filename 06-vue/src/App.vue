@@ -1,32 +1,41 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <h3>{{ title }}</h3>
-  
-  <input type="text" ref="name" />
-  <input type="text" ref="password" />
-  <button @click="login">Login</button>
-  <br />
-  <p v-if="isLogin">Login Successed</p>
-  <p v-else>Login failed</p>
+  <input type="text" ref="name" /><br />
+  <input type="password" ref="password" /><br />
+  <button @click="selectTag">Login</button>
+  <p v-if="isLogin">Login is succeed</p>
+  <p v-else>Login is failed</p>
+  <hr />
+  <Button @clean="cleanInput" />
+  <input type="text" ref="inputText" />
 </template>
 
 <script>
+import Button from "./components/ButtonView.vue";
+
 export default {
   name: "App",
+  components: {
+    Button,
+  },
   data() {
     return {
-      title: "Login",
+      title: "Bu bizim uygulamamiz",
       name: "ahmet",
-      password: "123",
+      password: "1234",
       isLogin: false,
     };
   },
   methods: {
-    login() {
+    selectTag() {
       return this.$refs.name.value === this.name &&
         this.$refs.password.value === this.password
         ? (this.isLogin = true)
         : (this.isLogin = false);
+    },
+    cleanInput() {
+      this.$refs.inputText.value = "";
     },
   },
 };
