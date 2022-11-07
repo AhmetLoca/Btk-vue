@@ -2,7 +2,9 @@
   <div>
     <h1>Students</h1>
     <div v-for="student in students" :key="student.id">
-      <p>{{ student.name }}</p>
+      <router-link :to="{ name: 'studentInfo', params: { id: student.id } }">{{
+        student.name
+      }}</router-link>
     </div>
   </div>
 </template>
@@ -12,9 +14,9 @@ export default {
   data() {
     return {
       students: [
-        { id: 1, name: "Ahmet", not: 60 },
-        { id: 2, name: "Mehmet", not: 40 },
-        { id: 3, name: "Ali", not: 80 },
+        { id: 1, name: "ahmet", not: 75 },
+        { id: 2, name: "varol", not: 89 },
+        { id: 3, name: "mehmet", not: 34 },
       ],
     };
   },
