@@ -11,7 +11,7 @@ const routes = [
     path: "/add",
     name: "AddProject",
 
-    component: () => import("../views/AppProject.vue"),
+    component: () => import("../views/AddProject.vue"),
   },
   {
     /*hangi projeyi secersem onun id'siyle gidecegim icin ":id" dedim. */
