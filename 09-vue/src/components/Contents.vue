@@ -17,7 +17,7 @@ export default {
   setup() {
     const route = useRoute();
     const router = useRouter();
-/*
+    /*
 Bir Route içerisindeki özelliklere params,meta,name,path gibi 
 özelliklere erişmek için Route.
 
