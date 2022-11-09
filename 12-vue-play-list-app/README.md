@@ -1,4 +1,4 @@
-# 12-vue-the-learning-resources-app
+# 12-vue-play-list-app
 
 ## Project setup
 ```
