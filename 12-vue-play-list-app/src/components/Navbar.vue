@@ -3,12 +3,15 @@
     <nav>
       <div>
         <router-link :to="{ name: 'home' }"
-          ><img src="@/assets/logo.png" alt="" />
-          <h1>PlayList</h1></router-link
-        >
+          ><img src="@/assets/logo.png"
+        /></router-link>
+        <h1><router-link :to="{ name: 'home' }">Playlist</router-link></h1>
       </div>
       <div class="links">
         <div v-if="user">
+          <router-link class="btn" :to="{ name: 'createplaylist' }"
+            >Create Playlist</router-link
+          >
           <button @click="handleClick">Logout</button>
         </div>
         <div v-else>
