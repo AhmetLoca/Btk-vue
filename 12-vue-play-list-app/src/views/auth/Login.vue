@@ -1,10 +1,11 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h3>Login</h3>
-    <input type="email" placeholder="Email" v-model="email" />
+    <input type="email" placeholder="E-mail" v-model="email" />
     <input type="password" placeholder="Password" v-model="password" />
     <div v-if="error" class="error">{{ error }}</div>
-    <button>Login</button>
+    <button v-if="!isPending">Login</button>
+    <p v-if="isPending">Loading..</p>
   </form>
 </template>
 
@@ -13,22 +14,22 @@ import useLogin from "@/composables/useLogin";
 import { ref } from "vue";
 export default {
   setup() {
-    const { error, login } = useLogin();
+    const { error, login, isPending } = useLogin();
     const email = ref("");
     const password = ref("");
 
-    /* login response'umu göndersin. */
     const handleSubmit = async () => {
       const res = await login(email.value, password.value);
       if (!error.value) {
-        console.log("user logged in");
+        console.log("User Login in");
       }
     };
     return {
       email,
       password,
-      handleSubmit,
       error,
+      handleSubmit,
+      isPending,
     };
   },
 };

@@ -10,7 +10,7 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    /* lazy load */
+    /* lazy loading */
     component: () => import("../views/auth/Login.vue"),
   },
 ];
