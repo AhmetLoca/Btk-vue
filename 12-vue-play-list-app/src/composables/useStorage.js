@@ -1,3 +1,5 @@
+/* filebaseStorage'e img'i upload edebilmemiz gerekiyor. */
+
 import { projectStorage } from "../firebase/config";
 import { ref } from "vue";
 import getUser from "./getUser";
@@ -10,7 +12,7 @@ const useStorage = () => {
   const filePath = ref(null);
 
   const uploadImage = async (file) => {
-    filePath.value = `covers/${user.value.uid}/${file.name}`;
+    filePath.value = `covers/${user.value.id}/${file.name}`;
     const storageRef = projectStorage.ref(filePath.value);
 
     try {
@@ -31,7 +33,7 @@ const useStorage = () => {
       error.value = err.message;
     }
   };
-  return { uploadImage, url, filePath, error, deleteImage };
+  return { url, filePath, error, uploadImage, deleteImage };
 };
 
 export default useStorage;
