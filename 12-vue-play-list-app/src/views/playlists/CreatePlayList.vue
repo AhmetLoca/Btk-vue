@@ -44,6 +44,10 @@ export default {
       if (file.value) {
         isPending.value = true;
         await uploadImage(file.value);
+        /* 
+        Bir response olusturduk. İçerisine objelerimizi verdik
+        response bize bir id ile döndü.
+        */
         const res = await addDoc({
           title: title.value,
           description: description.value,
@@ -56,6 +60,7 @@ export default {
         });
         isPending.value = false;
         if (!error.value) {
+          /* router push ile playlisy details'e göndermem lazim. */
           router.push({ name: "playlistdetails", params: { id: res.id } });
         }
       }
