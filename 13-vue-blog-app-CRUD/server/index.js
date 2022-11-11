@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-//import router from "./router/router.js";
+import router from "./router/router.js";
 
 const app = express();
 app.use(cors());
@@ -13,7 +13,7 @@ app.use(express.json());
 dotenv.config();
 
 //router'in içerisinde yazdigim /posts router'ini kullaniyorum.
-//app.use("/posts", router);
+app.use("/posts", router);
 
 //uygulamamizi 5000. port'ta dinleyecegiz.
 //Callback function içerisinde yapmak istediğim şey database'e baglanmak.

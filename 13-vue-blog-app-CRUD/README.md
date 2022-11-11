@@ -4,11 +4,17 @@ To do list:
 
 -[x] Create a cluster in MongoDB
 (Not local mongoDB, I'll use cloud date server(MongoDB Atlas))
+
 -[x] Install dependencies for backend
+
 -[x] Create an express app, connect to db
+
 -[] Create a mongoose model
+
 -[] Set routes, test with Postman
+
 -[] Create a vue app, install bulma.io
+
 -[] Create a navbar component
 
 -[] Home view
