@@ -16,7 +16,7 @@ const useDocument = (collection, id) => {
     } catch (err) {
       console.log(err.message);
       isPending.value = false;
-      error.value = "could not delete the document";
+      error.value = "Could not delete the document";
     }
   };
 
