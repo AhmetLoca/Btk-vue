@@ -17,6 +17,7 @@
       <div class="card">
         <footer class="card-footer">
           <button
+            @click="editPost(post._id)"
             class="card-footer-item button is-info is-large is-light is-outlined"
           >
             Edit
@@ -44,7 +45,7 @@ export default {
       güncelleyecegiz ve icerisine posts'larimizda dolduracagiz.
     */
     const posts = ref([]);
-
+    const router = useRouter();
     /*
     postman'de yaptıgımız butun işlemleri frontend'imizde
     gerceklestirecegiz. */
@@ -78,7 +79,14 @@ export default {
       getPosts();
     }
 
-    async function editPost(_id) {}
+    async function editPost(_id) {
+      router.push({
+        name: "update",
+        params: {
+          id: _id,
+        },
+      });
+    }
 
     return {
       posts,
