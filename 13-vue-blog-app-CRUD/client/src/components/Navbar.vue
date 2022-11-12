@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item" href="https:/ahmetloca.com">
         <img
           src="../assets/1200px-Vue.js_Logo_2.svg.png"
-          width="42"
+          width="40"
           height="30"
         />
       </a>
