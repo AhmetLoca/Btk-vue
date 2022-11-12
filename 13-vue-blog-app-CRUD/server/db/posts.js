@@ -16,20 +16,28 @@ const postSchema = mongoose.Schema({
 });
 
 /* 
-
 Ben bu şemayı kullanarak bir tane database modeli olusturacagim.
 Model'imin ismi post olsun.
     
-Yukarida belirledigim şema bu modelin içerisine aktariliyor.
-Bu model'in dökümanını olustururken bu şema kullanılacak.
-Bu şemadaki alanları doldurarak mongodb'de bu modele ait bir döküman 
-tutabiliyor olacagim.
+Yukarida belirledigim şema bu MODELİN içerisine AKTARILIYOR.
+BU MODELİN DÖKÜMANI OLUŞTURULURKEN BU ŞEMA KULLANILACAK.
 
-Ne zaman yeni bir dokuman mongoDb'ye gönderecegim o zaman mongodb bir tane
-collection olusturacak.
+Bu şemadaki alanları doldurarak mongoDB'de bu modele 
+ait bir döküman tutabiliyor olacagim.
+
+Ne zaman yeni bir döküman mongoDb'ye gönderecegim 
+O zaman mongodb bir tane collection olusturacak.
+*/
+
+/* DATABASE MODELİ */
+/*
+mongodb bunun adına otomatik olarak 's takısı getiriyor
+Çoğul hale getirip bir tane collection olusturuyor.
 */
 const Post = mongoose.model("post", postSchema);
 
-/* router'a bu Post'u import edip database'de cesitli islemler gerceklestirecegim
- */
+/* 
+Router'a bu Post'u import edip database'de 
+cesitli islemler gerceklestirecegim
+*/
 export default Post;

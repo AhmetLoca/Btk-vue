@@ -2,6 +2,8 @@
 
 To do list:
 
+ BACKEND
+
 -[x] Create a cluster in MongoDB
 (Not local mongoDB, I'll use cloud date server(MongoDB Atlas))
 
@@ -9,13 +11,15 @@ To do list:
 
 -[x] Create an express app, connect to db
 
--[] Create a mongoose model
+-[x] Create a mongoose model
 
--[] Set routes, test with Postman
+-[x] Set routes, test with Postman
 
--[] Create a vue app, install bulma.io
+ FRONTEND 
 
--[] Create a navbar component
+-[x] Create a vue app, install bulma.io
+
+-[x] Create a navbar component
 
 -[] Home view
   -[] Create Postlist component
@@ -29,4 +33,3 @@ To do list:
   -[] Create PostForm component
 
 -[] Update view
-               
