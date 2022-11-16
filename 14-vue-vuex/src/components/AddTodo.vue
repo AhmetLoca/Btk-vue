@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="addTodo">
-    <input type="text" v-model="todo" />
+    <input type="text" v-model="myTodo" />
     <button>Add</button>
   </form>
 </template>
@@ -8,22 +8,16 @@
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-
 export default {
   setup() {
-    const todo = ref(null);
+    const myTodo = ref(null);
     const router = useRouter();
 
     const addTodo = () => {
-      /* Burada yazdigim query'i bir metot yardimiyla dinleyip(onUpdated) Home.vue'a aktariyorum */
-      router.push({ path: "/", query: { data: todo.value } });
-      todo.value = "";
+      router.push({ path: "/", query: { data: myTodo.value } });
+      myTodo.value = "";
     };
-
-    return {
-      todo,
-      addTodo,
-    };
+    return { addTodo, myTodo };
   },
 };
 </script>
