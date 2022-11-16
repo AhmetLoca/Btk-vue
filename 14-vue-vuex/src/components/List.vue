@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      {{ todo.myTodo }}
+      {{ todo.todo }}
     </li>
   </ul>
 </template>
@@ -23,8 +23,4 @@ export default {
 };
 </script>
 
-<style>
-li {
-  list-style: none;
-}
-</style>
+<style></style>

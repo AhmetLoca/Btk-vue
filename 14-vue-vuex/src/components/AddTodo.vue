@@ -1,23 +1,28 @@
 <template>
   <form @submit.prevent="addTodo">
-    <input type="text" v-model="myTodo" />
+    <input type="text" placeholder="add todo.." v-model="todo" />
     <button>Add</button>
   </form>
 </template>
 
 <script>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+
 export default {
   setup() {
-    const myTodo = ref(null);
-    const router = useRouter();
+    const store = useStore();
+    const todo = ref("");
 
     const addTodo = () => {
-      router.push({ path: "/", query: { data: myTodo.value } });
-      myTodo.value = "";
+      /* commit dedigim zaman mutations icerisindeki metotlara erisebiliyorum
+        commit içerisine 2 şey alıyor.
+        1.metot ismi(string seklinde)
+        2.payload (veri)
+      */
+      store.commit("addTodoStore", { newTodo: todo.value, done: false });
     };
-    return { addTodo, myTodo };
+    return { addTodo, todo };
   },
 };
 </script>
