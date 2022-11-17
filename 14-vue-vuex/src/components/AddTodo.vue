@@ -7,7 +7,7 @@
 
 <script>
 import { ref } from "vue";
-import { useStore } from "vuex";
+import { useStore } from "vue";
 
 export default {
   setup() {
@@ -15,16 +15,26 @@ export default {
     const todo = ref("");
 
     const addTodo = () => {
-      /* commit dedigim zaman mutations icerisindeki metotlara erisebiliyorum
-        commit içerisine 2 şey alıyor.
-        1.metot ismi(string seklinde)
-        2.payload (veri)
-      */
-      store.commit("addTodoStore", { newTodo: todo.value, done: false });
+      const objectTodo = {
+        newTodo: todo.value,
+        done: true,
+      };
+      store.commit("addTodoStore", objectTodo);
+      store.dispatch("addTodoAction", objectTodo);
     };
-    return { addTodo, todo };
+
+    return {
+      addTodo,
+      todo,
+    };
   },
 };
+
+/*
+const addTodo = () => {
+      store.commit("addTodoStore", { newTodo: todo.value, done: false });
+    };
+*/
 </script>
 
 <style></style>
