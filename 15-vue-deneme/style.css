@@ -1,0 +1,7 @@
+.completedItem {
+  background-color: green;
+}
+
+.uncompletedItem {
+  background-color: red;
+}
